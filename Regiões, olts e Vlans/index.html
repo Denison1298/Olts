@@ -363,9 +363,24 @@
         </ul>
     </div>
 
-    <div id="leon" class="tabcontent">
-        <h2>LEON - UNM2000 - VLAN 2001</h2>
-        <ul>
+    <div id="unm2000" class="tabcontent">
+        <h2>UNM2000</h2>
+        <!-- Sub-abas para UNM2000 -->
+        <div class="sub-tabs">
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-leon')">Leon</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-nashiville')">Nashiville</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-campoalto')">Campo Alto</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-campoalto2')">Campo Alto 2</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-losangeles2')">Los Angeles 2</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-locatelli')">Locatelli</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-leblon')">Leblon</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-novalima')">Nova Lima NL_OLT01</button>
+        </div>
+        <!-- Conteúdo das sub-abas -->
+        <div id="unm2000-leon" class="sub-tabcontent">
+            <h3>Leon - VLAN 2001</h3>
+            <ul>
+            <li>Leon 2001 - NO.CEO ou caixas IDL</li>
             <li>AREA 001</li>
             <li>AREA 004</li>
             <li>AREA 009</li>
@@ -410,27 +425,6 @@
             <li>AREA 137</li>
             <li>AREA 138</li>
             <li>AREA 139</li>
-        </ul>
-    </div>
-
-    <div id="unm2000" class="tabcontent">
-        <h2>UNM2000</h2>
-        <!-- Sub-abas para UNM2000 -->
-        <div class="sub-tabs">
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-leon')">Leon</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-nashiville')">Nashiville</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-campoalto')">Campo Alto</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-campoalto2')">Campo Alto 2</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-losangeles2')">Los Angeles 2</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-locatelli')">Locatelli</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-leblon')">Leblon</button>
-            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-novalima')">Nova Lima NL_OLT01</button>
-        </div>
-        <!-- Conteúdo das sub-abas -->
-        <div id="unm2000-leon" class="sub-tabcontent">
-            <h3>Leon - VLAN 2001</h3>
-            <ul>
-                <li>NO.CEO ou caixas IDL</li>
             </ul>
         </div>
         <div id="unm2000-nashiville" class="sub-tabcontent">
