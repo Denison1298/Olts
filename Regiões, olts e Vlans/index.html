@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olts e Vlans</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #295ba5;
+        }
+        header {
+            background-color: #295ba5;
+            padding: 10px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 200px;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #searchInput {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #555;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #666;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .tablinks {
+            background-color: #555;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 2px;
+        }
+        .tablinks.active {
+            background-color: #777;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #295ba5;
+            background-color: white;
+        }
+        .tabcontent h2 {
+            margin-top: 0;
+        }
+        .tabcontent ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tabcontent li {
+            padding: 5px 0;
+        }
+        .sub-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .sub-tablinks {
+            background-color: #777;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 0 2px;
+        }
+        .sub-tablinks.active {
+            background-color: #999;
+        }
+        .sub-tabcontent {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #295ba5;
+            background-color: #f9f9f9;
+        }
+        .sub-tabcontent h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/Logo.png" alt="Logo" class="logo">
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Pesquisar..." onkeydown="handleKeyPress(event)">
+        <button onclick="search()">Pesquisar</button>
+    </div>
+
+    <div class="tabs">
+        <button class="tablinks" onclick="openTab(event, 'mape')">MAPE - U2000 - VLAN 3001</button>
+        <button class="tablinks" onclick="openTab(event, 'nacoes1')">NAÇÕES 1 - U2000 - VLAN 3002</button>
+        <button class="tablinks" onclick="openTab(event, 'nacoes2')">NAÇÕES 2 - U2000 - VLAN 3002</button>
+        <button class="tablinks" onclick="openTab(event, 'taquaral')">TAQUARAL - U2000 - VLAN 3000</button>
+        <button class="tablinks" onclick="openTab(event, 'leon')">LEON - UNM2000 - VLAN 2001</button>
+        <button class="tablinks" onclick="openTab(event, 'unm2000')">UNM2000</button>
+        <button class="tablinks" onclick="openTab(event, 'u2000')">U2000</button>
+        <button class="tablinks" onclick="openTab(event, 'netnumen')">NetNumen</button>
+    </div>
+
+    <div id="mape" class="tabcontent">
+        <h2>MAPE - U2000 - VLAN 3001</h2>
+        <ul>
+            <li>AREA 028</li>
+            <li>AREA 029</li>
+            <li>AREA 037</li>
+            <li>AREA 038</li>
+            <li>AREA 039</li>
+            <li>AREA 040</li>
+            <li>AREA 041</li>
+            <li>AREA 042</li>
+            <li>AREA 043</li>
+            <li>AREA 044</li>
+            <li>AREA 045</li>
+            <li>AREA 046</li>
+            <li>AREA 049</li>
+            <li>AREA 052</li>
+            <li>AREA 055</li>
+            <li>AREA 057</li>
+            <li>AREA 058</li>
+            <li>AREA 059</li>
+            <li>AREA 070</li>
+            <li>AREA 071</li>
+            <li>AREA 072</li>
+            <li>AREA 073</li>
+            <li>AREA 074</li>
+            <li>AREA 075</li>
+            <li>AREA 076</li>
+            <li>AREA 077</li>
+            <li>AREA 078</li>
+            <li>AREA 079</li>
+            <li>AREA 080</li>
+            <li>AREA 081</li>
+            <li>AREA 082</li>
+            <li>AREA 084</li>
+            <li>AREA 085</li>
+            <li>AREA 140</li>
+            <li>AREA 141</li>
+            <li>AREA 142</li>
+            <li>AREA 143</li>
+            <li>AREA 144</li>
+            <li>AREA 145</li>
+            <li>AREA 146</li>
+            <li>AREA 147</li>
+            <li>AREA 148</li>
+            <li>AREA 149</li>
+            <li>AREA 150</li>
+            <li>AREA 151</li>
+            <li>AREA 152</li>
+            <li>AREA 153</li>
+            <li>AREA 154</li>
+            <li>AREA 155</li>
+            <li>AREA 156</li>
+            <li>AREA 157</li>
+            <li>AREA 158</li>
+            <li>AREA 159</li>
+            <li>AREA 300</li>
+            <li>AREA 301</li>
+            <li>AREA 302</li>
+            <li>AREA 303</li>
+            <li>AREA 304</li>
+            <li>AREA 305</li>
+            <li>AREA 306</li>
+            <li>AREA 307</li>
+            <li>AREA 308</li>
+            <li>AREA 309</li>
+            <li>AREA 310</li>
+            <li>AREA 311</li>
+            <li>AREA 312</li>
+            <li>AREA 313</li>
+            <li>AREA 314</li>
+            <li>AREA 315</li>
+            <li>AREA 316</li>
+            <li>AREA 317</li>
+            <li>AREA 318</li>
+            <li>AREA 319</li>
+            <li>AREA 320</li>
+            <li>AREA 321</li>
+            <li>AREA 322</li>
+            <li>AREA 323</li>
+            <li>AREA 324</li>
+            <li>AREA 325</li>
+            <li>AREA 326</li>
+            <li>AREA 327</li>
+            <li>AREA 328</li>
+            <li>AREA 329</li>
+            <li>AREA 330</li>
+            <li>AREA 331</li>
+            <li>AREA 332</li>
+            <li>AREA 333</li>
+            <li>AREA 334</li>
+            <li>AREA 335</li>
+            <li>AREA 336</li>
+            <li>AREA 338</li>
+            <li>AREA 339</li>
+            <li>AREA 340</li>
+            <li>AREA 341</li>
+            <li>AREA 342</li>
+            <li>AREA 343</li>
+            <li>AREA 344</li>
+        </ul>
+    </div>
+
+    <div id="nacoes1" class="tabcontent">
+        <h2>NAÇÕES 1 - U2000 - VLAN 3002</h2>
+        <ul>
+            <li>AREA 083</li>
+            <li>AREA 086</li>
+            <li>AREA 170</li>
+            <li>AREA 171</li>
+            <li>AREA 172</li>
+            <li>AREA 173</li>
+            <li>AREA 174</li>
+            <li>AREA 175</li>
+            <li>AREA 176</li>
+            <li>AREA 177</li>
+            <li>AREA 178</li>
+            <li>AREA 179</li>
+            <li>AREA 180</li>
+            <li>AREA 181</li>
+            <li>AREA 182</li>
+            <li>AREA 183</li>
+            <li>AREA 184</li>
+            <li>AREA 185</li>
+            <li>AREA 186</li>
+            <li>AREA 187</li>
+            <li>AREA 188</li>
+            <li>AREA 189</li>
+            <li>AREA 190</li>
+            <li>AREA 191</li>
+            <li>AREA 192</li>
+            <li>AREA 193</li>
+            <li>AREA 194</li>
+            <li>AREA 195</li>
+            <li>AREA 196</li>
+            <li>AREA 197</li>
+            <li>AREA 198</li>
+            <li>AREA 199</li>
+            <li>AREA 200</li>
+            <li>AREA 201</li>
+            <li>AREA 202</li>
+            <li>AREA 203</li>
+            <li>AREA 204</li>
+            <li>AREA 205</li>
+            <li>AREA 206</li>
+            <li>AREA 207</li>
+            <li>AREA 208</li>
+            <li>AREA 209</li>
+            <li>AREA 210</li>
+            <li>AREA 211</li>
+            <li>AREA 212</li>
+            <li>AREA 213</li>
+            <li>AREA 214</li>
+            <li>AREA 215</li>
+            <li>AREA 216</li>
+            <li>AREA 217</li>
+            <li>AREA 218</li>
+            <li>AREA 219</li>
+            <li>AREA 220</li>
+            <li>AREA 221</li>
+            <li>AREA 222</li>
+            <li>AREA 223</li>
+            <li>AREA 224</li>
+            <li>AREA 225</li>
+            <li>AREA 226</li>
+            <li>AREA 227</li>
+            <li>AREA 228</li>
+            <li>AREA 229</li>
+            <li>AREA 230</li>
+            <li>AREA 231</li>
+            <li>AREA 232</li>
+            <li>AREA 233</li>
+            <li>AREA 234</li>
+            <li>AREA 235</li>
+            <li>AREA 236</li>
+            <li>AREA 237</li>
+            <li>AREA 238</li>
+            <li>AREA 239</li>
+            <li>AREA 240</li>
+            <li>AREA 241</li>
+            <li>AREA 242</li>
+            <li>AREA 243</li>
+            <li>AREA 244</li>
+            <li>AREA 245</li>
+            <li>AREA 246</li>
+            <li>AREA 247</li>
+            <li>AREA 248</li>
+            <li>AREA 249</li>
+            <li>AREA 250</li>
+            <li>AREA 251</li>
+            <li>AREA 252</li>
+            <li>AREA 253</li>
+            <li>AREA 254</li>
+            <li>AREA 255</li>
+            <li>AREA 256</li>
+            <li>AREA 257</li>
+            <li>AREA 258</li>
+            <li>AREA 259</li>
+            <li>AREA 260</li>
+            <li>AREA 261</li>
+            <li>AREA 262</li>
+            <li>AREA 263</li>
+            <li>AREA 264</li>
+            <li>AREA 265</li>
+            <li>AREA 266</li>
+        </ul>
+    </div>
+
+    <div id="nacoes2" class="tabcontent">
+        <h2>NAÇÕES 2 - U2000 - VLAN 3002</h2>
+        <ul>
+            <li>AREA 267</li>
+            <li>AREA 270</li>
+            <li>AREA 271</li>
+            <li>AREA 272</li>
+            <li>AREA 273</li>
+            <li>AREA 274</li>
+            <li>AREA 275</li>
+            <li>AREA 276</li>
+            <li>AREA 277</li>
+            <li>AREA 278</li>
+            <li>AREA 279</li>
+            <li>AREA 280</li>
+            <li>AREA 281</li>
+            <li>AREA 282</li>
+            <li>AREA 283</li>
+            <li>AREA 284</li>
+            <li>AREA 285</li>
+            <li>AREA 286</li>
+            <li>AREA 287</li>
+            <li>AREA 288</li>
+            <li>AREA 289</li>
+            <li>AREA 290</li>
+            <li>AREA 291</li>
+            <li>AREA 292</li>
+            <li>AREA 293</li>
+        </ul>
+    </div>
+
+    <div id="taquaral" class="tabcontent">
+        <h2>TAQUARAL - U2000 - VLAN 3000</h2>
+        <ul>
+            <li>AREA 090</li>
+            <li>AREA 091</li>
+            <li>AREA 092</li>
+            <li>AREA 093</li>
+            <li>AREA 094</li>
+            <li>AREA 095</li>
+            <li>AREA 096</li>
+            <li>AREA 097</li>
+            <li>AREA 098</li>
+            <li>AREA 099</li>
+            <li>AREA 100</li>
+            <li>AREA 101</li>
+            <li>AREA 102</li>
+            <li>AREA 103</li>
+            <li>AREA 104</li>
+            <li>AREA 105</li>
+            <li>AREA 106</li>
+            <li>AREA 107</li>
+            <li>AREA 108</li>
+            <li>AREA 109</li>
+            <li>AREA 110</li>
+            <li>AREA 111</li>
+            <li>AREA 112</li>
+            <li>AREA 113</li>
+            <li>AREA 114</li>
+            <li>AREA 115</li>
+            <li>AREA 116</li>
+            <li>AREA 117</li>
+            <li>AREA 118</li>
+            <li>AREA 119</li>
+            <li>AREA 120</li>
+            <li>AREA 122</li>
+            <li>AREA 160</li>
+            <li>AREA 162</li>
+            <li>AREA 163</li>
+            <li>AREA 350</li>
+            <li>AREA 351</li>
+            <li>AREA 352</li>
+            <li>AREA 353</li>
+            <li>AREA 354</li>
+            <li>AREA 355</li>
+            <li>AREA 356</li>
+            <li>AREA 357</li>
+            <li>AREA 358</li>
+            <li>AREA 359</li>
+            <li>AREA 360</li>
+            <li>AREA 361</li>
+            <li>AREA 362</li>
+            <li>AREA 364</li>
+            <li>AREA 365</li>
+        </ul>
+    </div>
+
+    <div id="leon" class="tabcontent">
+        <h2>LEON - UNM2000 - VLAN 2001</h2>
+        <ul>
+            <li>AREA 001</li>
+            <li>AREA 004</li>
+            <li>AREA 009</li>
+            <li>AREA 019</li>
+            <li>AREA 022</li>
+            <li>AREA 023</li>
+            <li>AREA 024</li>
+            <li>AREA 033</li>
+            <li>AREA 034</li>
+            <li>AREA 035</li>
+            <li>AREA 036</li>
+            <li>AREA 047</li>
+            <li>AREA 048</li>
+            <li>AREA 050</li>
+            <li>AREA 051</li>
+            <li>AREA 060</li>
+            <li>AREA 061</li>
+            <li>AREA 062</li>
+            <li>AREA 063</li>
+            <li>AREA 064</li>
+            <li>AREA 065</li>
+            <li>AREA 066</li>
+            <li>AREA 067</li>
+            <li>AREA 069</li>
+            <li>AREA 087</li>
+            <li>AREA 089</li>
+            <li>AREA 121</li>
+            <li>AREA 123</li>
+            <li>AREA 124</li>
+            <li>AREA 125</li>
+            <li>AREA 126</li>
+            <li>AREA 127</li>
+            <li>AREA 128</li>
+            <li>AREA 129</li>
+            <li>AREA 130</li>
+            <li>AREA 131</li>
+            <li>AREA 132</li>
+            <li>AREA 133</li>
+            <li>AREA 134</li>
+            <li>AREA 135</li>
+            <li>AREA 136</li>
+            <li>AREA 137</li>
+            <li>AREA 138</li>
+            <li>AREA 139</li>
+        </ul>
+    </div>
+
+    <div id="unm2000" class="tabcontent">
+        <h2>UNM2000</h2>
+        <!-- Sub-abas para UNM2000 -->
+        <div class="sub-tabs">
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-leon')">Leon</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-nashiville')">Nashiville</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-campoalto')">Campo Alto</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-campoalto2')">Campo Alto 2</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-losangeles2')">Los Angeles 2</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-locatelli')">Locatelli</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-leblon')">Leblon</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'unm2000-novalima')">Nova Lima NL_OLT01</button>
+        </div>
+        <!-- Conteúdo das sub-abas -->
+        <div id="unm2000-leon" class="sub-tabcontent">
+            <h3>Leon - VLAN 2001</h3>
+            <ul>
+                <li>Leon 2001 - NO.CEO ou caixas IDL</li>
+            </ul>
+        </div>
+        <div id="unm2000-nashiville" class="sub-tabcontent">
+            <h3>Nashiville - VLAN 4012</h3>
+            <ul>
+                <li>Nashiville 4012 - N.CEO</li>
+            </ul>
+        </div>
+        <div id="unm2000-campoalto" class="sub-tabcontent">
+            <h3>Campo Alto - VLAN 4015</h3>
+            <ul>
+                <li>Campo Alto 4015 - CEO</li>
+            </ul>
+        </div>
+        <div id="unm2000-campoalto2" class="sub-tabcontent">
+            <h3>Campo Alto 2 - VLAN 4017</h3>
+            <ul>
+                <li>Campo Alto 2 4017 - CEO</li>
+            </ul>
+        </div>
+        <div id="unm2000-losangeles2" class="sub-tabcontent">
+            <h3>Los Angeles 2 - VLAN 4018</h3>
+            <ul>
+                <li>Los Angeles 2 4018 - L.CEO</li>
+            </ul>
+        </div>
+        <div id="unm2000-locatelli" class="sub-tabcontent">
+            <h3>Locatelli - VLAN 4019</h3>
+            <ul>
+                <li>Locatelli 4019 - LC.CEO</li>
+            </ul>
+        </div>
+        <div id="unm2000-leblon" class="sub-tabcontent">
+            <h3>Leblon - VLAN 4021</h3>
+            <ul>
+                <li>Leblon 4021 - B.CEO</li>
+            </ul>
+        </div>
+        <div id="unm2000-novalima" class="sub-tabcontent">
+            <h3>Nova Lima NL_OLT01 - VLAN 4029</h3>
+            <ul>
+                <li>Nova Lima NL_OLT01 4029 - NL.CEO (Lignet)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="u2000" class="tabcontent">
+        <h2>U2000</h2>
+        <!-- Sub-abas para U2000 -->
+        <div class="sub-tabs">
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-taquaral')">Taquaral</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-mape')">Mape</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-nacoes')">Nações</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-nacoes2')">Nações 2</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-caioba')">Caiobá</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-moreninhas')">Moreninhas</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-losangeles4')">Los Angeles 4</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-losangeles3')">Los Angeles 3</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'u2000-aerorancho')">Aero Rancho</button>
+        </div>
+        <!-- Conteúdo das sub-abas -->
+        <div id="u2000-taquaral" class="sub-tabcontent">
+            <h3>Taquaral - VLAN 3000</h3>
+            <ul>
+                <li>Taquaral 3000 - T.CEO, ED-XX (Lignet) ou caixas IDL</li>
+            </ul>
+        </div>
+        <div id="u2000-mape" class="sub-tabcontent">
+            <h3>Mape - VLAN 3001</h3>
+            <ul>
+                <li>Mape 3001 - MP.CEO ou caixas IDL</li>
+            </ul>
+        </div>
+        <div id="u2000-nacoes" class="sub-tabcontent">
+            <h3>Nações - VLAN 3002</h3>
+            <ul>
+                <li>Nações 3002 - NC.CEO ou caixas IDL</li>
+            </ul>
+        </div>
+        <div id="u2000-nacoes2" class="sub-tabcontent">
+            <h3>Nações 2 - VLAN 3003</h3>
+            <ul>
+                <li>Nações 2 3003 - NC.CEO ou caixas IDL</li>
+            </ul>
+        </div>
+        <div id="u2000-caioba" class="sub-tabcontent">
+            <h3>Caiobá - VLAN 3880</h3>
+            <ul>
+                <li>Caiobá 3880 - C.CEO</li>
+            </ul>
+        </div>
+        <div id="u2000-moreninhas" class="sub-tabcontent">
+            <h3>Moreninhas - VLAN 4009</h3>
+            <ul>
+                <li>Moreninhas 4009 - M.CEO</li>
+            </ul>
+        </div>
+        <div id="u2000-losangeles4" class="sub-tabcontent">
+            <h3>Los Angeles 4 - VLAN 4014</h3>
+            <ul>
+                <li>Los Angeles 4 4014 - L.CEO</li>
+            </ul>
+        </div>
+        <div id="u2000-losangeles3" class="sub-tabcontent">
+            <h3>Los Angeles 3 - VLAN 4025</h3>
+            <ul>
+                <li>Los Angeles 3 4025 - R2.CEO (Lig10) ou L.CEO</li>
+            </ul>
+        </div>
+        <div id="u2000-aerorancho" class="sub-tabcontent">
+            <h3>Aero Rancho - VLAN 4026</h3>
+            <ul>
+                <li>Aero Rancho 4026 - R1.CEO ou AR.CEO (Lig10)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="netnumen" class="tabcontent">
+        <h2>NetNumen</h2>
+        <!-- Sub-abas para NetNumen -->
+        <div class="sub-tabs">
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-moreninhas')">Moreninhas 2</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-centro')">Centro</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-santoamaro')">Santo Amaro</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-nasser')">Nasser</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-novalima')">Nova Lima</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-montecastelo')">Monte Castelo</button>
+            <button class="sub-tablinks" onclick="openSubTab(event, 'netnumen-nlolt03')">NL_OLT03</button>
+        </div>
+        <!-- Conteúdo das sub-abas -->
+        <div id="netnumen-moreninhas" class="sub-tabcontent">
+            <h3>Moreninhas 2 - VLAN 301</h3>
+            <ul>
+                <li>Moreninhas 2 301 - M.CEO</li>
+            </ul>
+        </div>
+        <div id="netnumen-centro" class="sub-tabcontent">
+            <h3>Centro - VLAN 4020</h3>
+            <ul>
+                <li>Centro 4020 - CT.CEO</li>
+            </ul>
+        </div>
+        <div id="netnumen-santoamaro" class="sub-tabcontent">
+            <h3>Santo Amaro - VLAN 4022</h3>
+            <ul>
+                <li>Santo Amaro 4022 - A.CEO OU SA.CEO</li>
+            </ul>
+        </div>
+        <div id="netnumen-nasser" class="sub-tabcontent">
+            <h3>Nasser - VLAN 4023</h3>
+            <ul>
+                <li>Nasser 4023 - S.CEO OU NS.CEO</li>
+            </ul>
+        </div>
+        <div id="netnumen-novalima" class="sub-tabcontent">
+            <h3>Nova Lima - VLAN 4027</h3>
+            <ul>
+                <li>Nova Lima 4027 - R3.CEO ou NL.CEO (Lig10)</li>
+            </ul>
+        </div>
+        <div id="netnumen-montecastelo" class="sub-tabcontent">
+            <h3>Monte Castelo - VLAN 4035</h3>
+            <ul>
+                <li>Monte Castelo 4035 - MC.CEO (Lignet)</li>
+            </ul>
+        </div>
+        <div id="netnumen-nlolt03" class="sub-tabcontent">
+            <h3>NL_OLT03 - VLAN 4037</h3>
+            <ul>
+                <li>NL_OLT03 4037 - NL.CEO (Lignet)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="scripts.js"></script>
+<div id="los-angeles-results" class="tabcontent" style="display:none;">
+    <h2>Resultados de L.CEO</h2>
+    <ul>
+        <li>Los Angeles 2 - VLAN 4018</li>
+        <li>Los Angeles 3 - VLAN 4025</li>
+        <li>Los Angeles 4 - VLAN 4014</li>
+    </ul>
+</div>
+<div id="campo-alto-results" class="tabcontent" style="display:none;">
+    <h2>Resultados de CEO</h2>
+    <ul>
+        <li>Campo Alto - VLAN 4015</li>
+        <li>Campo Alto 2 - VLAN 4017</li>
+    </ul>
+</div>
+<div id="nova-lima-results" class="tabcontent" style="display:none;">
+    <h2>Resultados de NL.CEO</h2>
+    <ul>
+        <li>Nova Lima - VLAN 4027</li>
+        <li>NL OLT 01 - VLAN 4029</li>
+        <li>NL OLT 03 - VLAN 4037</li>
+    </ul>
+</div>
+<div id="caioba" class="tabcontent">
+    <h2>Caiobá - VLAN 3880</h2>
+    <ul>
+        <li>Caiobá 3880 - C.CEO</li>
+        <!-- Outros itens relacionados ao Caiobá -->
+    </ul>
+</div>
+</body>
+</html>
