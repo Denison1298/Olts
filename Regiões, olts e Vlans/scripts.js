@@ -46,28 +46,28 @@ function search() {
     const novaLimaResults = document.getElementById('nova-lima-results');
     novaLimaResults.style.display = 'none';
 
+    const moreninhasResults = document.getElementById('moreninhas-results');
+    moreninhasResults.style.display = 'none';
+
     if (input === "ceo") {
-        // Mostrar os resultados específicos para "CEO"
         campoAltoResults.style.display = 'block';
         found = true;
     } else if (input === "l.ceo") {
-        // Mostrar os 3 "Los Angeles" com as VLANs
         losAngelesResults.style.display = 'block';
         found = true;
     } else if (input === "c.ceo") {
-        // Mostrar a aba "Caiobá" diretamente pelo ID
         openTab(null, 'caioba');
         found = true;
     } else if (input === "nl.ceo") {
-        // Mostrar os 3 "Nova Lima" com as VLANs
         novaLimaResults.style.display = 'block';
         found = true;
+    } else if (input === "m.ceo") {
+        moreninhasResults.style.display = 'block';
+        found = true;
     } else if (input === "t.ceo") {
-        // Mostrar a aba "u2000" e a sub-aba correta "Taquaral"
-        openTab(null, 'u2000'); // Abre a aba 'u2000'
-
-        // Substitua 'taquaral-u2000' pelo ID correto da sub-aba 'Taquaral' dentro da aba 'u2000'.
-        openSubTab(null, 'taquaral-u2000'); // Abre a sub-aba 'Taquaral' dentro de 'u2000'
+        // Abrir a aba "U2000" e a sub-aba "Taquaral"
+        openTab(null, 'u2000'); // Abre a aba 'U2000'
+        openSubTab(null, 'taquaral-u2000'); // Abre a sub-aba 'Taquaral' dentro de 'U2000'
         found = true;
     } else {
         // Lógica de pesquisa genérica para outros termos
