@@ -1,97 +1,105 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Fonte mais moderna */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #295ba5;
-    color: #faf2f2; /* Cor de texto padrão */
-    line-height: 1.6; /* Melhora a legibilidade */
+    background-color: #23395d; /* Fundo mais escuro para melhor contraste */
+    color: #faf2f2;
+    line-height: 1.6;
+    font-size: 18px;
 }
 
 header {
-    background-color: #295ba5;
-    padding: 20px; /* Aumenta o padding para mais espaço */
+    background-color: #1d2f53; /* Cabeçalho mais escuro */
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
 }
 
 .logo {
-    max-width: 220px; /* Reduz tamanho da logo para um visual mais clean */
+    max-width: 220px;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
-    margin: 30px 0; /* Aumenta a margem para melhor espaçamento */
+    margin: 30px 0;
 }
 
 #searchInput {
-    width: 300px;
+    width: 320px;
     padding: 12px;
     font-size: 16px;
-    border: 1px solid #ddd; /* Borda leve para destaque */
-    border-radius: 4px; /* Bordas arredondadas */
-    transition: border-color 0.3s ease; /* Transição suave */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
 }
 
 #searchInput:focus {
-    border-color: #295ba5; /* Cor de borda no foco */
-    outline: none; /* Remove o outline padrão */
+    border-color: #dadf3f;
+    outline: none;
 }
 
 button {
-    padding: 10px 20px; /* Aumenta a área clicável */
+    padding: 12px 24px;
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;
     background-color: #dadf3f;
-    color: white;
+    color: #23395d; /* Melhor contraste */
     border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease; /* Transição suave */
+    border-radius: 6px; /* Bordas mais suaves */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #444; /* Mudança de cor ao passar o mouse */
+    background-color: #c4c632; /* Cor de destaque no hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
 }
 
 .tabs {
     display: flex;
     justify-content: center;
-    margin: 30px 0; /* Aumenta a margem */
+    margin: 40px 0;
+    flex-wrap: wrap;
 }
 
 .tablinks {
-    background-color: #555;
+    background-color: #444;
     color: white;
-    padding: 12px 24px; /* Padding maior para toque e clique */
+    padding: 14px 28px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     margin: 0 2px;
-    border-radius: 4px 4px 0 0; /* Arredonda as bordas superiores */
-    transition: background-color 0.3s ease; /* Transição suave */
+    border-radius: 6px 6px 0 0; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex: 1 1 auto;
 }
 
 .tablinks:hover {
-    background-color: #666; /* Adiciona uma cor ao hover */
+    background-color: #666;
 }
 
 .tablinks.active {
     background-color: #dadf3f;
-    font-weight: bold; /* Destaca a aba ativa */
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #c4c632; /* Indicação clara da aba ativa */
 }
 
 .tabcontent {
     display: none;
-    padding: 20px;
-    border: 2px solid #295ba5; /* Borda superior mais destacada */
-    background-color: #4e8be6;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    padding: 30px;
+    border: 2px solid #1d2f53;
+    background-color: #3e5a9d; /* Cor de fundo suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -1px;
 }
 
 .tabcontent h2 {
     margin-top: 0;
-    font-weight: 700; /* Peso maior para o título */
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .tabcontent ul {
@@ -100,16 +108,20 @@ button:hover {
 }
 
 .tabcontent li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee; /* Linha para separar itens */
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Esconde o conteúdo das sub-abas por padrão */
+/* Sub-aba */
 .sub-tabcontent {
     display: none;
 }
 
-/* Exibe a sub-aba ativa */
 .sub-tabcontent.active {
     display: block;
+}
+
+/* Foco visível */
+button:focus, .tablinks:focus {
+    outline: 2px solid #dadf3f;
 }
