@@ -85,7 +85,7 @@ button:hover {
     display: none;
     padding: 20px;
     border-top: 2px solid #295ba5; /* Borda superior mais destacada */
-    background-color: white;
+    background-color: #295ba5;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
 }
 
