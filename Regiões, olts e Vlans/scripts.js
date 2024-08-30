@@ -83,7 +83,7 @@ function search() {
                 if (itemText.includes(input)) { // Verifica se o item inclui o texto buscado
                     sectionFound = true;
                     item.style.display = 'list-item';
-                    item.style.backgroundColor = "#ffff99"; // Destacar o item encontrado
+                    item.style.backgroundColor = "#036e11"; // Destacar o item encontrado
                     found = true;
                 } else {
                     item.style.display = 'none'; // Esconder itens que não correspondem
