@@ -26,7 +26,6 @@ header {
 
 #searchInput {
     width: 300px;
-    padding: 12px;
     font-size: 16px;
     border: 1px solid #ddd; /* Borda leve para destaque */
     border-radius: 4px; /* Bordas arredondadas */
