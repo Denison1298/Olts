@@ -108,7 +108,7 @@ function search() {
                         if (subItemText.includes(input)) {
                             subTabFound = true;
                             subItem.style.display = 'list-item';
-                            subItem.style.backgroundColor = "#ffff99"; // Destacar o item encontrado
+                            subItem.style.backgroundColor = "#036e11"; // Destacar o item encontrado
                             found = true;
                         } else {
                             subItem.style.display = 'none'; // Esconder itens que não correspondem
