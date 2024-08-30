@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #295ba5;
-    color: #e6e9ed; /* Cor de texto padrão */
+    color: #faf2f2; /* Cor de texto padrão */
     line-height: 1.6; /* Melhora a legibilidade */
 }
 
@@ -102,4 +102,14 @@ button:hover {
 .tabcontent li {
     padding: 5px 0;
     border-bottom: 1px solid #eee; /* Linha para separar itens */
+}
+
+/* Esconde o conteúdo das sub-abas por padrão */
+.sub-tabcontent {
+    display: none;
+}
+
+/* Exibe a sub-aba ativa */
+.sub-tabcontent.active {
+    display: block;
 }
