@@ -1,3 +1,8 @@
+// scripts.js
+
+// Log para confirmar que o arquivo foi carregado
+console.log("Scripts.js carregado");
+
 function openTab(evt, tabName) {
     var tabcontent = document.getElementsByClassName("tabcontent");
     for (var i = 0; i < tabcontent.length; i++) {
