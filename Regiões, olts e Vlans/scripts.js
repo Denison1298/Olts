@@ -1,5 +1,3 @@
-// scripts.js
-
 // Log para confirmar que o arquivo foi carregado
 console.log("Scripts.js carregado");
 
@@ -39,6 +37,13 @@ function openSubTab(evt, subTabName) {
 
 function search() {
     const input = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    // Verifica se o campo de pesquisa está vazio
+    if (input === '') {
+        alert('Por favor, preencha o campo de pesquisa.');
+        return; // Para a execução da função se o campo estiver vazio
+    }
+
     let found = false;
 
     // Esconder todos os resultados previamente exibidos
