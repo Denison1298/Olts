@@ -154,9 +154,10 @@ function handleKeyPress(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const firstTabButton = document.querySelector('.tablinks');
-    if (firstTabButton) {
-        firstTabButton.click();
+    // Selecionar e abrir automaticamente a aba "U2000"
+    const u2000TabButton = document.querySelector('.tablinks[onclick*="u2000"]');
+    if (u2000TabButton) {
+        u2000TabButton.click(); // Abre a aba "U2000"
     }
 
     document.getElementById('searchInput').addEventListener('input', () => {
